@@ -1,0 +1,235 @@
+free memory while deleting the contact
+
+
+// edit the information
+        else if(strcmp(inputcom, "edit") == 0) {
+            edit_contact(&l);
+        }
+
+
+node* get_path(Phonebook root, const char *key) {
+
+    // initialization part
+    int i;      // i for sting index traversing
+    int length = strlen(key);       // length for storing the length of sting
+    int index;      // index is for referring pointer name in trie
+
+    // p is the pointer to the nodes of trie
+    node *p = root;
+
+    // actual checking of the occurrence of the name
+    for (i = 0; i < length; i++) {
+
+        // if the present character is not space
+        // then assign pointer number to the index
+        if(key[i] != ' ')
+            index = (key[i] - 'a');
+        else        // if this is space then assign it to 26 because 26 is the pointer for space
+            index = 26;
+
+        // if index number of pointer is not available then return false ie 0
+        if (!p->children[index])
+            return NULL;
+        // pointer available go to that node
+        p = p->children[index];
+    }
+
+    // if that node exist and flag of that node is true then
+    // that person exist
+    return p;
+}
+
+
+
+
+
+
+
+
+
+// Returns 1 if a given Trie node has any children
+int hasChildren(Phonebook* p) {
+    node *curr = *p;
+    for (int i = 0; i < Alphabet; i++) {
+        if (curr->children[i]) {
+            return 1;       // child found
+        }
+    }
+    return 0;
+}
+
+
+
+
+// deletion
+
+
+// Recursive function to delete a string from a Trie
+int deletion(Phonebook *p, char* str) {
+
+    node *curr = *p;
+
+    // return 0 if Trie is empty
+    if (curr == NULL) {
+        return 0;
+    }
+
+    // if the end of the string is not reached
+    if (*str) {
+        // recur for the node corresponding to the next children in
+        // the string and if it returns 1, delete the current node
+        // (if it is non-leaf)
+        if (curr != NULL && (curr)->children[*str - 'a'] != NULL && deletion(&((curr)->children[*str - 'a']), str + 1) && (curr)->flag == 0) {
+            if (!hasChildren(&curr)) {
+                free(curr);
+                (curr) = NULL;
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    }
+
+    // if the end of the string is reached
+    if (*str == '\0' && (curr)->flag) {
+        // if the current node is a leaf node and doesn't have any children
+        if (!hasChildren(&curr)) {
+            free(curr);    // delete the current node
+            (curr) = NULL;
+            return 1;       // delete the non-leaf parent nodes
+        }
+
+        // if the current node is a leaf node and has children
+        else {
+            // mark the current node as a non-leaf node (DON'T DELETE IT)
+            (curr)->flag = 0;
+            return 0;       // don't delete its parent nodes
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+// printing information
+
+printf("               Name                 Number                   Occupation\n");
+    printf("________________________________________________________________________________\n");
+    while(fread(&e,sizeof(e),1,fp))
+    {
+       printf(" %20s %25s %24s\n",e.name,e.number,e.occupation);
+
+    }
+    printf("________________________________________________________________________________\n");
+    fclose(fp);
+
+
+
+
+
+
+
+
+// insert the given string into the tree
+void insert(Phonebook *t, char* s, int _check) {
+
+    // start from root node
+    node *p = *t;
+
+    // starting from the root node
+    while (*s) {
+
+        // create a new node if path does not exists
+        if (!p->children[*s - 'a']) {
+            p->children[*s - 'a']  = getnode();
+        }
+
+        // go to next node
+        p = p->children[*s - 'a'] ;
+
+        // increment string pointer
+        s++;
+    }
+
+     // mark current node as leaf
+     // this place we can insert a node
+    p->flag = 1;
+    p->check = _check;
+
+    return;
+}
+
+
+
+
+// function to print all the names of phonebook
+void printall(Phonebook *t, char s[], int level) {
+
+    node *temp_ = *t;
+    if(temp_->flag) {
+        s[level] = '\0';
+        //puts(s);
+        printf("%s ", s);
+        printf("  %d \n", temp_->check);
+
+    }
+    node *nn = *t;
+    for(int i = 0; i<Alphabet; i++) {
+        if(nn->children[i]) {
+            s[level] = i + 'a';
+            printall(&nn->children[i], s, level+1);
+        }
+    }
+}
+
+
+
+
+// search all *********************************
+
+//node *p = *t;
+
+    char name_[50];
+    int i = 0;
+    char ch;
+
+    printf("Enter Name : ");
+
+    node* path = NULL;
+    while(1) {
+        ch = getch();
+
+        if(ch == ENTER) {
+            name_[i] = '\0';
+            path = get_path(*t, name_);
+            printall(&path, name_, 0);
+            return;
+        }
+        else if(ch == BACKSPACE) {
+
+            if(i > 0) {
+                i--;
+                printf("\b \b");
+            }
+            else {
+                break;
+            }
+        }
+        else if(ch == SPACE) {
+            name_[i] = ch;
+            i++;
+        }
+        else {
+            name_[i] = ch;
+            i++;
+            path = get_path(*t, name_);
+            printall(&path, name_, 0);
+            printf("\n%s%c", name_, ch);
+        }
+    }
