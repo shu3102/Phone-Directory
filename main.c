@@ -1,10 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
 #include<string.h>
 
 #include"Phone.h"
-#include"Private_Phone.h"
 
 int main(int argc, char* argv[]) {
     printf("Hello Shubham!\n");
