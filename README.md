@@ -27,7 +27,8 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
          | `Search`          |   O(n)	  |   O(n)        |
          | `Insert`          |   O(n)	  |   O(n)        |
          | `Delete`          |   O(n)	  |   O(n)        |
-         
+     For Ex.
+     
        
 ![image](https://user-images.githubusercontent.com/69418944/188397922-a7548b3e-1948-4665-88cc-574b776fd24c.png)
 
@@ -49,7 +50,7 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
 
 
 
-   1. <b>Commands Available</b>
+   1. ```Commands Available```
 
       1. Commands and their Description
 
@@ -72,6 +73,7 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
          | `sortfev`         | to sort the fevourite contact of phonebook           |
          
 
+![image](https://user-images.githubusercontent.com/69418944/188403095-f077413e-2017-4000-bffd-d0171a072012.png)
 
 
 ## References
