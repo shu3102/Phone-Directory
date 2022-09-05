@@ -8,6 +8,14 @@ A telephone directory, commonly called a telephone book, telephone address book,
 A `telephone directory`, commonly called a telephone book, telephone address book, phone book.
 
 
+### Run
+
+```
+gcc -o executable_files/phonebookNew main.c codes/Excel.c codes/List.c codes/Password.c codes/Phone1.c codes/Stack.c codes/Phone.h
+```
+
+
+
 ### Data Structure Used
 
 ```TRIE```
