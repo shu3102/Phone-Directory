@@ -11,12 +11,12 @@ void traverse_stack(stack l)
     {
         printf("________________________________________________________________________________\n");
         printf(" %20s %25s %24s\n", l.a[t].name, l.a[t].NUMBER, l.a[t].address);
-        //printf("________________________________________________________________________________\n");
+        // printf("________________________________________________________________________________\n");
         t--;
     }
 }
 
-//Defination of all function
+// Defination of all function
 void init_stack(stack *s, int len)
 {
     s->a = (Person *)malloc(sizeof(Person) * len);
@@ -58,7 +58,7 @@ void pop_stack(stack *s)
         return;
     else
     {
-        //t = s->a[s->top];
+        // t = s->a[s->top];
         s->top--;
     }
     return;

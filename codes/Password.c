@@ -26,7 +26,7 @@ Pri_Phonebook *GetPrivateNode(char *pass)
             // make all pointer of the node characters to NULL
             nn->children[i] = NULL;
         }
-        //return nn;
+        // return nn;
     }
     else
         printf("cant allocate node ; memory full \n");
@@ -42,7 +42,7 @@ Pri_Phonebook *GetPrivateNode(char *pass)
 // take password input
 char *Get_password()
 {
-    //printf("shubham ");
+    // printf("shubham ");
 
     char *password = (char *)malloc(sizeof(char) * 20);
     int i = 0;
@@ -84,7 +84,7 @@ char *Get_password()
         }
     }
 
-    //printf("\n pass : %s", password);
+    // printf("\n pass : %s", password);
 
     return password;
 }
@@ -164,8 +164,8 @@ void Private_add_contact(Pri_Phonebook *root)
 
     printf("Enter Name : ");
     scanf("%s", _name);
-    //scanf("%[^\n]s", _name);
-    //gets(_name);
+    // scanf("%[^\n]s", _name);
+    // gets(_name);
     char *temp = (char *)malloc(sizeof(char) * strlen(_name));
     strcpy(temp, _name);
     p->name = temp;

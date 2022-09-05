@@ -64,7 +64,7 @@ void isvalid_number(Person *e)
                 printf("Please enter a valid number \n");
                 scanf("%s", e->NUMBER);
 
-                //To reenter the number if it contains special character.
+                // To reenter the number if it contains special character.
             }
         }
         return;
@@ -115,19 +115,19 @@ void insert(Phonebook *t, char *s, Person _check)
 // function to print all the names of phonebook
 void printall(Phonebook *t, char s[], int index)
 {
-    //printf("out from insert ");
+    // printf("out from insert ");
     node *temp_ = *t;
     if (temp_->flag)
     {
         s[index] = '\0';
-        //puts(s);
-        //printf("               Name                 Number                   Address\n");
+        // puts(s);
+        // printf("               Name                 Number                   Address\n");
         printf("_____________________________________________________________________________________\n");
         printf(" %15s %20s %15s %20s\n", s, temp_->member.NUMBER, temp_->member.address, temp_->member.email);
-        //printf("_____________________________________________________________________________________\n");
+        // printf("_____________________________________________________________________________________\n");
 
-        //printf("Name : %s \n", s);
-        //printf("Number : %s \n", temp_->member.NUMBER);
+        // printf("Name : %s \n", s);
+        // printf("Number : %s \n", temp_->member.NUMBER);
     }
     node *nn = *t;
     for (int i = 0; i < Alphabet; i++)
@@ -149,17 +149,17 @@ void printall(Phonebook *t, char s[], int index)
 // function to print all the names of phonebook
 void printall_reverse(Phonebook *t, char s[], int index)
 {
-    //printf("out from insert ");
+    // printf("out from insert ");
     node *temp_ = *t;
 
     if (temp_->flag)
     {
         s[index] = '\0';
-        //puts(s);
-        //printf("               Name                 Number                   Address\n");
+        // puts(s);
+        // printf("               Name                 Number                   Address\n");
         printf("_____________________________________________________________________________________\n");
         printf(" %15s %20s %15s %20s\n", s, temp_->member.NUMBER, temp_->member.address, temp_->member.email);
-        //printf("_____________________________________________________________________________________\n");
+        // printf("_____________________________________________________________________________________\n");
     }
     node *nn = *t;
     for (int i = Alphabet - 1; i >= 0; i--)
@@ -230,7 +230,7 @@ void search_all(Phonebook *t)
         printf("Enter Name : ");
         printf("%s", name__s);
         ch = getc(stdin);
-        //printf("\n");
+        // printf("\n");
         printf("%c", ch);
         printf("\n************************************************************* \n");
         if (ch == ENTER)
@@ -243,7 +243,7 @@ void search_all(Phonebook *t)
         if (ch != ' ')
         {
             name__s[i] = ch;
-            //name__[i+1] = '\0';
+            // name__[i+1] = '\0';
             i++;
             index = (ch - 'a');
             p = p->children[index];
@@ -252,18 +252,18 @@ void search_all(Phonebook *t)
         { // if this is space then assign it to 26 because 26 is the pointer for space
             index = 26;
             name__s[i] = ch;
-            //name__[i+1] = '\0';
+            // name__[i+1] = '\0';
             i++;
             p = p->children[index];
         }
 
         strcpy(pass_name, name__s);
-        //printf("passing name %s \n", pass_name);
+        // printf("passing name %s \n", pass_name);
         printall(&p, pass_name, i);
 
         printf("************************************************************* \n\n");
-        //printf("Enter Name : ");
-        //printf("%s", name__s);
+        // printf("Enter Name : ");
+        // printf("%s", name__s);
 
     } // end of while
 }
@@ -322,7 +322,7 @@ Phonebook remove_(Phonebook *root, char *key, int depth, stack *s)
     // deleted), and it is not end of another word.
     if (isEmpty(p) && p->flag == 0)
     {
-        //push_stack(s, p->member);
+        // push_stack(s, p->member);
         free(p);
         p = NULL;
     }
@@ -474,8 +474,8 @@ Again:
         remove_(root, del_name, 0, &s);
         printf("Enter Name : ");
         scanf("%s", _name);
-        //scanf("%[^\n]s", _name);
-        //gets(_name);
+        // scanf("%[^\n]s", _name);
+        // gets(_name);
         char *temp = (char *)malloc(sizeof(char) * strlen(_name));
         strcpy(temp, _name);
         safe->name = temp;
@@ -544,7 +544,7 @@ void edit_contact(Phonebook *root)
 
     printf("Enter Which Contact you want to modify ?\n");
     printf("Name -? ");
-    //gets(fun1_name);
+    // gets(fun1_name);
     scanf("%s", fun1_name);
     // initialization part
     // i for sting index traversing
@@ -579,7 +579,7 @@ void edit_contact(Phonebook *root)
     // that person exist
     if (p != NULL && p->flag)
     {
-        //Person mod_per = p->member;
+        // Person mod_per = p->member;
         modify_Person(&p->member, fun1_name, root);
         return;
         // *********************************************************************************************************************************************
@@ -647,8 +647,8 @@ Person *get_Person()
 
     printf("Enter Name : ");
     scanf("%s", _name);
-    //scanf("%[^\n]s", _name);
-    //gets(_name);
+    // scanf("%[^\n]s", _name);
+    // gets(_name);
     char *temp = (char *)malloc(sizeof(char) * strlen(_name));
     strcpy(temp, _name);
     p->name = temp;
