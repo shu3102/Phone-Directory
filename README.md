@@ -2,12 +2,12 @@
 
 
 
+![image](https://user-images.githubusercontent.com/69418944/188409541-b16abd0b-9459-458e-9a8b-cc0762960848.png)
 
 <br />
 <div align="center">
-  <a href="https://github.com/shu3102/Phone-Directory">
-    ![image](https://user-images.githubusercontent.com/69418944/188409541-b16abd0b-9459-458e-9a8b-cc0762960848.png)
-  </a>
+  <a href="https://github.com/shu3102/Phone-Directory"> Click Here...
+      </a>
 
   <h3 align="center">Phone Directory</h3>
 
@@ -24,9 +24,6 @@
 
 
 A `telephone directory`, commonly called a telephone book, telephone address book, phone book.
-
-[https://github.com/shu3102/Phone-Directory/blob/main/Output/Screenshot%20(71).png]
-![Screenshot]([https://github.com/shu3102/Phone-Directory/blob/main/Output/Screenshot%20(71).png])
 
 
 This PhoneDirectory Mini Project in C language is a console-based application written in the C programming language. This system is a simple little project that was compiled with the GCC compiler.
