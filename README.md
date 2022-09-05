@@ -34,9 +34,9 @@ For Ex.
          | Algorithm          |  Average   |   Worst case   |
          | -----------------  | -----------|--------------- |
          | `Space`            |   O(n)     |   O(n)         |
-         | `Search`           |   O(n)	   |   O(n)         |
-         | `Insert`           |   O(n)	   |   O(n)         |
-         | `Delete`           |   O(n)	   |   O(n)         |
+         | `Search`           |   O(n)     |   O(n)         |
+         | `Insert`           |   O(n)     |   O(n)         |
+         | `Delete`           |   O(n)     |   O(n)         |
      
    
 
