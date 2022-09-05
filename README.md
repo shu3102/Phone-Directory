@@ -26,8 +26,10 @@ For Ex.
 
 
 
-####Complexities
+### Complexities
+
      1. <b>Time complexity in big O notation<b/>
+     
 
          | Algorithm          |  Average   |   Worst case   |
          | -----------------  | -----------|--------------- |
