@@ -5,11 +5,11 @@
 ![image](https://user-images.githubusercontent.com/69418944/188409541-b16abd0b-9459-458e-9a8b-cc0762960848.png)
 
 <br />
-<div align="center">
+<div >
   <a href="https://github.com/shu3102/Phone-Directory"> Click Here...
       </a>
 
-  <h3 align="center">Phone Directory</h3>
+  <h3 align="center"> Phone Directory</h3>
 
 </div>
 
