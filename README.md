@@ -18,7 +18,15 @@ In computer science, a `trie`, also called `digital tree` or `prefix tree`, is a
 Unlike a binary search tree, nodes in the trie do not store their associated key. Instead, a node's position in the trie defines the key with which it is associated. This distributes the value of each key across the data structure, and means that not every node necessarily has an associated value.
 ``
 
-<b>Complexities</b>
+  
+For Ex.
+     
+       
+![image](https://user-images.githubusercontent.com/69418944/188397922-a7548b3e-1948-4665-88cc-574b776fd24c.png)
+
+
+
+####Complexities
      1. <b>Time complexity in big O notation<b/>
 
          | Algorithm          |  Average   |   Worst case   |
@@ -28,11 +36,7 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
          | `Insert`           |   O(n)	   |   O(n)         |
          | `Delete`           |   O(n)	   |   O(n)         |
      
-     For Ex.
-     
-       
-![image](https://user-images.githubusercontent.com/69418944/188397922-a7548b3e-1948-4665-88cc-574b776fd24c.png)
-
+   
 
 
 ## Available Functions
