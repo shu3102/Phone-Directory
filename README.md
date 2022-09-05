@@ -21,12 +21,13 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
 <b>Complexities</b>
      1. <b>Time complexity in big O notation<b/>
 
-         | Algorithm         |  Average   |   Worst case  |
-         | ----------------- | -----------|---------------|
-         | `Space`           |   O(n)     |   O(n)        |
-         | `Search`          |   O(n)	  |   O(n)        |
-         | `Insert`          |   O(n)	  |   O(n)        |
-         | `Delete`          |   O(n)	  |   O(n)        |
+         | Algorithm          |  Average   |   Worst case   |
+         | -----------------  | -----------|--------------- |
+         | `Space`            |   O(n)     |   O(n)         |
+         | `Search`           |   O(n)	   |   O(n)         |
+         | `Insert`           |   O(n)	   |   O(n)         |
+         | `Delete`           |   O(n)	   |   O(n)         |
+     
      For Ex.
      
        
@@ -48,7 +49,7 @@ Unlike a binary search tree, nodes in the trie do not store their associated key
 - Hiding Contacts (Private Phonebook)
 
 
-
+## Commands
 
    1. ```Commands Available```
 
